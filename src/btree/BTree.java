@@ -52,5 +52,19 @@ public class BTree<E extends Comparable<E>> {
             }
 
             mediana = push(current.childs.get(pos[0]), cl);
+            
+            if (up) {
+                if (current.nodeFull(this.orden - 1)) {
+                    mediana = dividedNode(current, mediana, pos[0]);
+                } else {
+                    putNode(current, mediana, nDes, pos[0]);
+                    up = false;
+                }
+                return mediana;
+            } else {
+                return null;
+            }
+        }
+    }
 
 }
