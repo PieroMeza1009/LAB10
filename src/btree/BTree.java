@@ -234,5 +234,11 @@ public class BTree<E extends Comparable<E>> {
         }
         return node.keys.get(node.count - 1);
     }
+    private E getSuccessor(BNode<E> node) {
+        while (node.childs.get(0) != null) {
+            node = node.childs.get(0);
+        }
+        return node.keys.get(0);
+    }
 
 }
