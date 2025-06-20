@@ -120,4 +120,16 @@ public class BTree<E extends Comparable<E>> {
         return s;
     }
 
+    private String writeTree(BNode<E> current) {
+        if (current == null) return "";
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("Node ").append(current.idNode).append(": [");
+
+        for (int i = 0; i < current.count; i++) {
+            sb.append(current.keys.get(i));
+            if (i < current.count - 1) sb.append(" | ");
+        }
+        sb.append("]\n");
+
 }
