@@ -182,5 +182,10 @@ public class BTree<E extends Comparable<E>> {
             }
         }
     }
+    private void delete(BNode<E> node, E key) {
+        int[] pos = new int[1];
+        boolean found = node.searchNode(key, pos);
+
+        if (found) {
 
 }
