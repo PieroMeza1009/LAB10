@@ -106,4 +106,17 @@ public class BTree<E extends Comparable<E>> {
         return median;
     }
 
+    // Método opcional para imprimir el árbol (por niveles o recursivamente)
+    public void print() {
+        printRecursive(this.root, 0);
+    }
+
+    private void printRecursive(BNode<E> node, int level) {
+        if (node != null) {
+            System.out.println("Nivel " + level + ": " + node);
+            for (int i = 0; i <= node.count; i++) {
+                printRecursive(node.childs.get(i), level + 1);
+            }
+        }
+    }
 }
