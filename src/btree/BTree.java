@@ -274,5 +274,12 @@ public class BTree<E extends Comparable<E>> {
         child.count++;
     }
 
+    private void borrowFromNext(BNode<E> node, int idx) {
+        BNode<E> child = node.childs.get(idx);
+        BNode<E> sibling = node.childs.get(idx + 1);
+
+        child.keys.set(child.count, node.keys.get(idx));
+        node.keys.set(idx, sibling.keys.get(0));
+
 
 }
