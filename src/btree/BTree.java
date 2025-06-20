@@ -158,5 +158,11 @@ public class BTree<E extends Comparable<E>> {
         boolean found = current.searchNode(cl, pos);
 
         if (found) {
+            System.out.println(cl + " se encuentra en el nodo " + current.idNode + ", posición " + pos[0]);
+            return true;
+        } else {
+            return searchRecursive(current.childs.get(pos[0]), cl);
+        }
+    }
 
 }
