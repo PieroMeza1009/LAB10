@@ -138,9 +138,7 @@ public class BTree<E extends Comparable<E>> {
         return sb.toString();
     }
 
-    // Método auxiliar opcional para impresión jerárquica
-    public void print() {
-        System.out.println(this.toString());
-    }
 
+
+    // ===================== Ejercicio 01 =====================
 }
