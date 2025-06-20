@@ -33,4 +33,14 @@ public class BTree<E extends Comparable<E>> {
         }
     }
 
+    // Inserción recursiva
+    private E push(BNode<E> current, E cl) {
+        int pos[] = new int[1];
+        E mediana;
+
+        if (current == null) {
+            up = true;
+            nDes = null;
+            return cl;
+
 }
