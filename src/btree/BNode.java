@@ -46,3 +46,16 @@ public class BNode<E extends Comparable<E>> {
             return false; // No encontrado, pos indica el hijo a descender
         }
     }
+
+    // Devuelve las claves del nodo como cadena
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Node ID: ").append(idNode).append(" | Keys: ");
+        for (int i = 0; i < count; i++) {
+            sb.append(keys.get(i));
+            if (i < count - 1) sb.append(", ");
+        }
+        return sb.toString();
+    }
+}
