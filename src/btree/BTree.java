@@ -197,5 +197,10 @@ public class BTree<E extends Comparable<E>> {
             } else {
                 // Caso 2: clave en nodo interno
                 BNode<E> predNode = node.childs.get(pos[0]);
+                if (predNode.count >= orden / 2) {
+                    E pred = getPredecessor(predNode);
+                    node.keys.set(pos[0], pred);
+                    delete(predNode, pred);
+                } else {
 
 }
