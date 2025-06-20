@@ -90,4 +90,20 @@ public class BTree<E extends Comparable<E>> {
             nDes.childs.set(i - posMdna + 1, current.childs.get(i + 1));
         }
 
+        nDes.count = (t - 1) - posMdna;
+        current.count = posMdna;
+
+        if (k <= t / 2) {
+            putNode(current, cl, rd, k);
+        } else {
+            putNode(nDes, cl, rd, k - posMdna);
+        }
+
+        E median = current.keys.get(current.count - 1);
+        nDes.childs.set(0, current.childs.get(current.count));
+        current.count--;
+
+        return median;
+    }
+
 }
