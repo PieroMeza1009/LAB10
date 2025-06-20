@@ -202,5 +202,16 @@ public class BTree<E extends Comparable<E>> {
                     node.keys.set(pos[0], pred);
                     delete(predNode, pred);
                 } else {
+                    BNode<E> succNode = node.childs.get(pos[0] + 1);
+                    if (succNode.count >= orden / 2) {
+                        E succ = getSuccessor(succNode);
+                        node.keys.set(pos[0], succ);
+                        delete(succNode, succ);
+                    } else {
+                        merge(node, pos[0]);
+                        delete(predNode, key);
+                    }
+                }
+            }
 
 }
