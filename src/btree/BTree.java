@@ -141,4 +141,14 @@ public class BTree<E extends Comparable<E>> {
 
 
     // ===================== Ejercicio 01 =====================
+
+    public boolean search(E cl) {
+        if (isEmpty()) {
+            System.out.println("El árbol está vacío.");
+            return false;
+        }
+
+        return searchRecursive(root, cl);
+    }
+
 }
