@@ -151,4 +151,12 @@ public class BTree<E extends Comparable<E>> {
         return searchRecursive(root, cl);
     }
 
+    private boolean searchRecursive(BNode<E> current, E cl) {
+        if (current == null) return false;
+
+        int[] pos = new int[1];
+        boolean found = current.searchNode(cl, pos);
+
+        if (found) {
+
 }
