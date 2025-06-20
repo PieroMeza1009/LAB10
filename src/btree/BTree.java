@@ -165,4 +165,12 @@ public class BTree<E extends Comparable<E>> {
         }
     }
 
+    // ===================== EJERCICIO 02: Eliminar clave =====================
+
+    public void remove(E key) {
+        if (root == null) {
+            System.out.println("El árbol está vacío.");
+            return;
+        }
+
 }
