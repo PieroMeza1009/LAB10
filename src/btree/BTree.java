@@ -42,5 +42,15 @@ public class BTree<E extends Comparable<E>> {
             up = true;
             nDes = null;
             return cl;
+        } else {
+            boolean found = current.searchNode(cl, pos);
+
+            if (found) {
+                System.out.println("Item duplicado\n");
+                up = false;
+                return null;
+            }
+
+            mediana = push(current.childs.get(pos[0]), cl);
 
 }
