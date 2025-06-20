@@ -131,5 +131,17 @@ public class BTree<E extends Comparable<E>> {
             if (i < current.count - 1) sb.append(" | ");
         }
         sb.append("]\n");
+        for (int i = 0; i <= current.count; i++) {
+            sb.append(writeTree(current.childs.get(i)));
+        }
+
+        return sb.toString();
+    }
+
+    // Método auxiliar opcional para impresión jerárquica
+    public void print() {
+        System.out.println(this.toString());
+    }
+}
 
 }
