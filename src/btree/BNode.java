@@ -31,3 +31,18 @@ public class BNode<E extends Comparable<E>> {
     public boolean nodeEmpty() {
         return count == 0;
     }
+
+    public boolean searchNode(E key, int[] pos) {
+        int i = 0;
+        while (i < count && keys.get(i).compareTo(key) < 0) {
+            i++;
+        }
+
+        if (i < count && keys.get(i).compareTo(key) == 0) {
+            pos[0] = i;
+            return true; // Encontrado
+        } else {
+            pos[0] = i;
+            return false; // No encontrado, pos indica el hijo a descender
+        }
+    }
