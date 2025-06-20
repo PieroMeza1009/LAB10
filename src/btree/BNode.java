@@ -22,3 +22,12 @@ public class BNode<E extends Comparable<E>> {
             this.childs.add(null);
         }
     }
+    // Verifica si el nodo está lleno
+    public boolean nodeFull(int maxKeys) {
+        return count == maxKeys;
+    }
+
+    // Verifica si el nodo está vacío
+    public boolean nodeEmpty() {
+        return count == 0;
+    }
