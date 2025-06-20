@@ -172,5 +172,15 @@ public class BTree<E extends Comparable<E>> {
             System.out.println("El árbol está vacío.");
             return;
         }
+        delete(root, key);
+
+        if (root.count == 0) {
+            if (root.childs.get(0) != null) {
+                root = root.childs.get(0); // Hijo único se vuelve la nueva raíz
+            } else {
+                root = null;
+            }
+        }
+    }
 
 }
