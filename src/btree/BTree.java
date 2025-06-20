@@ -76,5 +76,18 @@ public class BTree<E extends Comparable<E>> {
         current.childs.set(k + 1, rd);
         current.count++;
     }
+    // Divide un nodo lleno en dos y devuelve la mediana para subirla
+    private E dividedNode(BNode<E> current, E cl, int k) {
+        BNode<E> rd = nDes;
+        int posMdna;
+        int t = this.orden;
+        posMdna = (k <= t / 2) ? t / 2 : t / 2 + 1;
+
+        nDes = new BNode<>(this.orden);
+
+        for (int i = posMdna; i < t - 1; i++) {
+            nDes.keys.set(i - posMdna, current.keys.get(i));
+            nDes.childs.set(i - posMdna + 1, current.childs.get(i + 1));
+        }
 
 }
