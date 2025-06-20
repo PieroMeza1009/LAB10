@@ -192,5 +192,10 @@ public class BTree<E extends Comparable<E>> {
                 for (int i = pos[0]; i < node.count - 1; i++) {
                     node.keys.set(i, node.keys.get(i + 1));
                 }
+                node.keys.set(node.count - 1, null);
+                node.count--;
+            } else {
+                // Caso 2: clave en nodo interno
+                BNode<E> predNode = node.childs.get(pos[0]);
 
 }
