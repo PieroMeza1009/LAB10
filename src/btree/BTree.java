@@ -280,6 +280,21 @@ public class BTree<E extends Comparable<E>> {
 
         child.keys.set(child.count, node.keys.get(idx));
         node.keys.set(idx, sibling.keys.get(0));
+        for (int i = 0; i < sibling.count - 1; i++) {
+            sibling.keys.set(i, sibling.keys.get(i + 1));
+        }
+        sibling.keys.set(sibling.count - 1, null);
+
+        if (sibling.childs.get(0) != null) {
+            child.childs.set(child.count + 1, sibling.childs.get(0));
+            for (int i = 0; i < sibling.count; i++) {
+                sibling.childs.set(i, sibling.childs.get(i + 1));
+            }
+        }
+
+        child.count++;
+        sibling.count--;
+    }
 
 
 }
