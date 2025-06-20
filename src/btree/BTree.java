@@ -295,6 +295,11 @@ public class BTree<E extends Comparable<E>> {
         child.count++;
         sibling.count--;
     }
+    private void merge(BNode<E> node, int idx) {
+        BNode<E> child = node.childs.get(idx);
+        BNode<E> sibling = node.childs.get(idx + 1);
+
+        child.keys.set(child.count, node.keys.get(idx));
 
 
 }
