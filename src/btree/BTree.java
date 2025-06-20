@@ -219,4 +219,13 @@ public class BTree<E extends Comparable<E>> {
                 return;
             }
 
+            BNode<E> child = node.childs.get(pos[0]);
+            if (child.count < orden / 2) {
+                fill(node, pos[0]);
+            }
+
+            delete(node.childs.get(pos[0]), key);
+        }
+    }
+
 }
