@@ -300,6 +300,24 @@ public class BTree<E extends Comparable<E>> {
         BNode<E> sibling = node.childs.get(idx + 1);
 
         child.keys.set(child.count, node.keys.get(idx));
+        for (int i = 0; i < sibling.count; i++) {
+            child.keys.set(child.count + 1 + i, sibling.keys.get(i));
+        }
+
+        if (sibling.childs.get(0) != null) {
+            for (int i = 0; i <= sibling.count; i++) {
+                child.childs.set(child.count + 1 + i, sibling.childs.get(i));
+            }
+        }
+
+        for (int i = idx; i < node.count - 1; i++) {
+            node.keys.set(i, node.keys.get(i + 1));
+            node.childs.set(i + 1, node.childs.get(i + 2));
+        }
+
+        child.count += sibling.count + 1;
+        node.count--;
+    }
 
 
 }
