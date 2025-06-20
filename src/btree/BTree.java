@@ -213,5 +213,10 @@ public class BTree<E extends Comparable<E>> {
                     }
                 }
             }
+        } else {
+            if (node.childs.get(pos[0]) == null) {
+                System.out.println("La clave " + key + " no existe.");
+                return;
+            }
 
 }
