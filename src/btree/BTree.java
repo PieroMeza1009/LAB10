@@ -187,5 +187,10 @@ public class BTree<E extends Comparable<E>> {
         boolean found = node.searchNode(key, pos);
 
         if (found) {
+            if (node.childs.get(pos[0]) == null) {
+                // Caso 1: clave en hoja
+                for (int i = pos[0]; i < node.count - 1; i++) {
+                    node.keys.set(i, node.keys.get(i + 1));
+                }
 
 }
