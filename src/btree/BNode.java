@@ -6,9 +6,12 @@ import java.util.ArrayList;
 public class BNode<E extends Comparable<E>> {
     
     protected static int globalId = 0;  // esta es una variable estática usada para asignar un ID único a cada nodo
-    protected int idNode;
-    protected ArrayList<E> keys;
-    protected ArrayList<BNode<E>> childs;
+   
+    protected int idNode; //este es un id unico del nodo actual
+
+    protected ArrayList<E> keys;//esta es la lista de las claves almacenadas en el nodo
+
+    protected ArrayList<BNode<E>> childs;//esta es una lista de referencia a los hijos
     protected int count;
 
     public BNode(int n) {
