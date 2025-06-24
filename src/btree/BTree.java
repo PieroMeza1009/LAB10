@@ -1,5 +1,8 @@
 package btree;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -370,6 +373,11 @@ public class BTree<E extends Comparable<E>> {
             nodos.get(5).childs.set(2, nodos.get(7));
 
             return tree;
+
+        } catch (IOException | NumberFormatException | NullPointerException e) {
+            throw new ItemNoFound("Error al construir el árbol: " + e.getMessage());
+        }
+    }
 
 
 
