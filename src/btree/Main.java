@@ -19,4 +19,13 @@ public class Main {
         System.out.println("\n=== ÁRBOL ACTUAL ===");
         System.out.println(arbol);
 
+        System.out.println("\n=== BÚSQUEDA DE CLAVES ===");
+        arbol.search(42);  // clave que existe
+        arbol.search(100); // clave que no existe
+
+        System.out.println("\n=== ELIMINACIÓN DE CLAVES ===");
+        arbol.remove(16);
+        arbol.remove(33);
+        arbol.remove(10);
+
 }
