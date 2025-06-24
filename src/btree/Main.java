@@ -33,7 +33,7 @@ public class Main {
 
         System.out.println("\n=== CARGA DESDE ARCHIVO arbolB.txt ===");
         try {
-            BTree<Integer> arbolDesdeArchivo = BTree.building_BTree("arbolB.txt");
+            BTree<Integer> arbolDesdeArchivo = BTree.building_BTree("src/arbolB.txt");
             System.out.println("Árbol cargado correctamente desde archivo:");
             System.out.println(arbolDesdeArchivo);
         } catch (ItemNoFound e) {
