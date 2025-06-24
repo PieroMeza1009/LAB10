@@ -16,5 +16,8 @@ public class RegistroEstudiante implements Comparable<RegistroEstudiante> {
     public String getNombre() { 
         return nombre;
      }
-
+    @Override
+    public int compareTo(RegistroEstudiante otro) {
+        return Integer.compare(this.codigo, otro.codigo);
+    }
 }
