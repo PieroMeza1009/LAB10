@@ -26,6 +26,7 @@ public class RegistroEstudiante implements Comparable<RegistroEstudiante> {
         return Integer.compare(this.codigo, otro.codigo);
     }
 
+    // con este override se retorna una representación en texto del estudiante
     @Override
     public String toString() {
         return codigo + " - " + nombre;
