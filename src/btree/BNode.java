@@ -48,16 +48,18 @@ public class BNode<E extends Comparable<E>> {
     //pero si no la encuentra, devuelve false y en pos[0] la posición del hijo donde debería continuar la búsqueda.
     public boolean searchNode(E key, int[] pos) {
         int i = 0;
+
+        //aca recorremos la lista de claves hasta encontrar una igual o mayor
         while (i < count && keys.get(i).compareTo(key) < 0) {
             i++;
         }
 
         if (i < count && keys.get(i).compareTo(key) == 0) {
             pos[0] = i;
-            return true; // Encontrado
+            return true; 
         } else {
             pos[0] = i;
-            return false; // No encontrado, pos indica el hijo a descender
+            return false; // No encontrado, pos ahora indica el hijo a descender
         }
     }
 
