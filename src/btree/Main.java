@@ -37,7 +37,7 @@ public class Main {
             System.out.println("Árbol cargado correctamente desde archivo:");
             System.out.println(arbolDesdeArchivo);
         } catch (ItemNoFound e) {
-            System.out.println("❌ Error al construir el árbol desde archivo: " + e.getMessage());
+            System.out.println(" Error al construir el árbol desde archivo: " + e.getMessage());
         }
     }
 
