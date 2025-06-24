@@ -169,13 +169,14 @@ public class BTree<E extends Comparable<E>> {
     private boolean searchRecursive(BNode<E> current, E cl) {
         if (current == null) return false;
 
-        int[] pos = new int[1];
-        boolean found = current.searchNode(cl, pos);
+        int[] pos = new int[1];   ///// arreglo auxiliar para guardar la posición
+        boolean found = current.searchNode(cl, pos); ///buscamos la cvlave del nodo
 
         if (found) {
             System.out.println(cl + " se encuentra en el nodo " + current.idNode + ", posición " + pos[0]);
             return true;
         } else {
+        // Si no lo encuentra, desciende al hijo correspondiente
             return searchRecursive(current.childs.get(pos[0]), cl);
         }
     }
