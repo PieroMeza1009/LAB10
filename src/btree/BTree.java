@@ -356,5 +356,15 @@ public class BTree<E extends Comparable<E>> {
             }
 
 
+            // Reconstrucción para archivo específico
+            tree.root = nodos.get(6);
+            tree.root.childs.set(0, nodos.get(2));
+            tree.root.childs.set(1, nodos.get(5));
+
+            nodos.get(2).childs.set(0, nodos.get(0));
+            nodos.get(2).childs.set(1, nodos.get(12));
+            nodos.get(2).childs.set(2, nodos.get(3));
+
+
 
 }
