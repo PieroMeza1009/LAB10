@@ -161,9 +161,11 @@ public class BTree<E extends Comparable<E>> {
             return false;
         }
 
+    // Llama al método recursivo para buscar desde la raíz
         return searchRecursive(root, cl);
     }
-
+   
+    //este metodo realiza la búsqueda en el nodo actual
     private boolean searchRecursive(BNode<E> current, E cl) {
         if (current == null) return false;
 
