@@ -433,18 +433,23 @@ public class BTree<E extends Comparable<E>> {
             // Obtiene la clave en la posición i
             E elemento = current.keys.get(i);
 
-            // Verifica si el elemento es un RegistroEstudiante
+            // Verifica si el elemento es un registrodeestudiante
             if (elemento instanceof RegistroEstudiante) {
                 RegistroEstudiante est = (RegistroEstudiante) elemento;
+
+
+            // Si el código coincide, se retorna el nombre
                 if (est.getCodigo() == codigo) {
                     return est.getNombre();
                 }
+                // Si el código buscado es menor, va al hijo izquierdo
                 if (codigo < est.getCodigo()) {
                     return buscarNombreRecursivo(current.childs.get(i), codigo);
                 }
             }
         }
 
+        // Si no se encontró en ninguna clave, va al hijo derecho
         return buscarNombreRecursivo(current.childs.get(current.count), codigo);
     }
 
