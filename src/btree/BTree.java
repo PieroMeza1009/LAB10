@@ -377,9 +377,10 @@ public class BTree<E extends Comparable<E>> {
                 BNode<Integer> nodo = new BNode<>(orden);
                 nodo.idNode = idNodo;
 
+                //y mediante este for se agregan las claves al nodo
                 for (int i = 2; i < partes.length; i++) {
                     int clave = Integer.parseInt(partes[i].trim());
-                    nodo.keys.set(i - 2, clave);
+                    nodo.keys.set(i - 2, clave); // Inserta la clave en la posición correcta
                     nodo.count++;
                 }
 
