@@ -7,6 +7,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import excepciones.ItemNoFound;
+import modelo.RegistroEstudiante;
+
 import java.io.*;
 import java.util.*;
 
@@ -401,6 +403,10 @@ public class BTree<E extends Comparable<E>> {
                     return buscarNombreRecursivo(current.childs.get(i), codigo);
                 }
             }
+        }
+
+        return buscarNombreRecursivo(current.childs.get(current.count), codigo);
+    }
 
 
 }
