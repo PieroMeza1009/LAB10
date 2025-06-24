@@ -383,7 +383,10 @@ public class BTree<E extends Comparable<E>> {
         }
     }
     // ========== EJERCICIO 4 ==========
-
+    public String buscarNombre(int codigo) {
+        if (isEmpty()) return "Árbol vacío";
+        return buscarNombreRecursivo(root, codigo);
+    }
 
 
 }
