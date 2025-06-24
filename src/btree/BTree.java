@@ -399,10 +399,12 @@ public class BTree<E extends Comparable<E>> {
             tree.root.childs.set(0, nodos.get(2));
             tree.root.childs.set(1, nodos.get(5));
 
+            // Asignación de hijos al nodo 2
             nodos.get(2).childs.set(0, nodos.get(0));
             nodos.get(2).childs.set(1, nodos.get(12));
             nodos.get(2).childs.set(2, nodos.get(3));
 
+            // Asignación de hijos al nodo 5
             nodos.get(5).childs.set(0, nodos.get(4));
             nodos.get(5).childs.set(1, nodos.get(8));
             nodos.get(5).childs.set(2, nodos.get(7));
