@@ -349,6 +349,12 @@ public class BTree<E extends Comparable<E>> {
                 }
 
                 if (nodo.count > orden - 1) {
+                    throw new ItemNoFound("Nodo con más claves que el orden permitido");
+                }
+
+                nodos.put(idNodo, nodo);
+            }
+
 
 
 }
