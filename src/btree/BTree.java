@@ -323,6 +323,7 @@ public class BTree<E extends Comparable<E>> {
         child.count++;
         sibling.count--;
     }
+    // Fusiona dos hijos en uno solo
     private void merge(BNode<E> node, int idx) {
         BNode<E> child = node.childs.get(idx);
         BNode<E> sibling = node.childs.get(idx + 1);
@@ -348,6 +349,8 @@ public class BTree<E extends Comparable<E>> {
     }
 
     // ========== EJERCICIO 3 ==========
+
+    //este es un metodo estático que construye un BTree a partir de un archivo de texto
     public static BTree<Integer> building_BTree(String filename) throws ItemNoFound {
         BTree<Integer> tree = null;
         Map<Integer, BNode<Integer>> nodos = new HashMap<>();
