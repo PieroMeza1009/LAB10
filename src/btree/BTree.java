@@ -339,5 +339,16 @@ public class BTree<E extends Comparable<E>> {
                 int nivel = Integer.parseInt(partes[0].trim());
                 int idNodo = Integer.parseInt(partes[1].trim());
 
+                BNode<Integer> nodo = new BNode<>(orden);
+                nodo.idNode = idNodo;
+
+                for (int i = 2; i < partes.length; i++) {
+                    int clave = Integer.parseInt(partes[i].trim());
+                    nodo.keys.set(i - 2, clave);
+                    nodo.count++;
+                }
+
+                if (nodo.count > orden - 1) {
+
 
 }
