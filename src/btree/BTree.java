@@ -258,13 +258,14 @@ public class BTree<E extends Comparable<E>> {
         }
         return node.keys.get(node.count - 1);
     }
-    // Retorna el sucesor (mínimo valor del subárbol derecho)
+    // Retorna el sucesor que seroa el mínimo valor del subárbol derecho
     private E getSuccessor(BNode<E> node) {
         while (node.childs.get(0) != null) {
             node = node.childs.get(0);
         }
         return node.keys.get(0);
     }
+    //aca nos aseguramos que el hijo tenga el mínimo de claves necesarias
     private void fill(BNode<E> node, int idx) {
         if (idx != 0 && node.childs.get(idx - 1).count >= orden / 2) {
             borrowFromPrev(node, idx);
@@ -278,6 +279,8 @@ public class BTree<E extends Comparable<E>> {
             }
         }
     }
+
+    //en esta parte se toma una clave prestada del hermano izquierdo
     private void borrowFromPrev(BNode<E> node, int idx) {
         BNode<E> child = node.childs.get(idx);
         BNode<E> sibling = node.childs.get(idx - 1);
@@ -298,7 +301,7 @@ public class BTree<E extends Comparable<E>> {
         sibling.count--;
         child.count++;
     }
-
+// y aqui se toma una clave prestada del hermano derecho
     private void borrowFromNext(BNode<E> node, int idx) {
         BNode<E> child = node.childs.get(idx);
         BNode<E> sibling = node.childs.get(idx + 1);
