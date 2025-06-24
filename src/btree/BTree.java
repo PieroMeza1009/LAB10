@@ -424,7 +424,9 @@ public class BTree<E extends Comparable<E>> {
         // Llama al método recursivo de búsqueda
         return buscarNombreRecursivo(root, codigo);
     }
+    //este es el metodo recursivo que busca el nombre en los nodos
     private String buscarNombreRecursivo(BNode<E> current, int codigo) {
+        // Caso base: nodo nulo
         if (current == null) return "No encontrado";
 
         for (int i = 0; i < current.count; i++) {
