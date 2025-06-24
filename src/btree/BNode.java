@@ -29,20 +29,23 @@ public class BNode<E extends Comparable<E>> {
         for (int i = 0; i < n; i++) {  // Agrega 'n' claves nulas como espacio reservado
             this.keys.add(null);
         }
+        // Agrega 'n+1' referencias nulas para los hijos
         for (int i = 0; i < n + 1; i++) {
             this.childs.add(null);
         }
     }
-    // Verifica si el nodo está lleno
+    //este metodo indica si el nodo está lleno
     public boolean nodeFull(int maxKeys) {
         return count == maxKeys;
     }
 
-    // Verifica si el nodo está vacío
+    // este veerifica si el nodo está vacío
     public boolean nodeEmpty() {
         return count == 0;
     }
 
+    //Busca una clave en el nodo, si la encuentra, devuelve true y en pos[0] la posición donde se encuentra, 
+    //pero si no la encuentra, devuelve false y en pos[0] la posición del hijo donde debería continuar la búsqueda.
     public boolean searchNode(E key, int[] pos) {
         int i = 0;
         while (i < count && keys.get(i).compareTo(key) < 0) {
