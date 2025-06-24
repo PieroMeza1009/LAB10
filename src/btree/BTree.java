@@ -419,7 +419,9 @@ public class BTree<E extends Comparable<E>> {
     // ========== EJERCICIO 4 ==========
     // Método que busca el nombre del estudiante dado su código universitario
     public String buscarNombre(int codigo) {
+        //si esta vacio...
         if (isEmpty()) return "Árbol vacío";
+        // Llama al método recursivo de búsqueda
         return buscarNombreRecursivo(root, codigo);
     }
     private String buscarNombreRecursivo(BNode<E> current, int codigo) {
