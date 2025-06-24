@@ -326,6 +326,11 @@ public class BTree<E extends Comparable<E>> {
     public static BTree<Integer> building_BTree(String filename) throws ItemNoFound {
         BTree<Integer> tree = null;
         Map<Integer, BNode<Integer>> nodos = new HashMap<>();
+        
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+            String linea;
+            int orden = Integer.parseInt(br.readLine().trim());
+            tree = new BTree<>(orden);
 
 
 }
