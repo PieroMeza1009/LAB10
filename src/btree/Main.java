@@ -14,4 +14,9 @@ public class Main {
         for (int clave : claves) {
             arbol.insert(clave);
         }
+
+
+        System.out.println("\n=== ÁRBOL ACTUAL ===");
+        System.out.println(arbol);
+
 }
