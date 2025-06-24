@@ -368,10 +368,12 @@ public class BTree<E extends Comparable<E>> {
                 if (linea.isEmpty()) continue;// Ignora líneas vacías
 
                 String[] partes = linea.split(",");//// Se separa la línea por comas
-                
+
+                // aca se obtiene el nivel, y el id del nodo
                 int nivel = Integer.parseInt(partes[0].trim());
                 int idNodo = Integer.parseInt(partes[1].trim());
 
+                // Se crea el nodo con el orden correspondiente
                 BNode<Integer> nodo = new BNode<>(orden);
                 nodo.idNode = idNodo;
 
