@@ -39,5 +39,6 @@ public class Main {
         } catch (ItemNoFound e) {
             System.out.println("❌ Error al construir el árbol desde archivo: " + e.getMessage());
         }
+    }
 
 }
