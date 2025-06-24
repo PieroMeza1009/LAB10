@@ -409,8 +409,9 @@ public class BTree<E extends Comparable<E>> {
             nodos.get(5).childs.set(1, nodos.get(8));
             nodos.get(5).childs.set(2, nodos.get(7));
 
-            return tree;
+            return tree;//aca ya se decuelve el arbol ya construido
 
+            // En caso de error en lectura o formato, lanza excepción personalizada
         } catch (IOException | NumberFormatException | NullPointerException e) {
             throw new ItemNoFound("Error al construir el árbol: " + e.getMessage());
         }
