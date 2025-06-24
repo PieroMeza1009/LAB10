@@ -430,7 +430,10 @@ public class BTree<E extends Comparable<E>> {
         if (current == null) return "No encontrado";
 
         for (int i = 0; i < current.count; i++) {
+            // Obtiene la clave en la posición i
             E elemento = current.keys.get(i);
+
+            // Verifica si el elemento es un RegistroEstudiante
             if (elemento instanceof RegistroEstudiante) {
                 RegistroEstudiante est = (RegistroEstudiante) elemento;
                 if (est.getCodigo() == codigo) {
