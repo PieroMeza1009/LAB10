@@ -392,6 +392,10 @@ public class BTree<E extends Comparable<E>> {
 
         for (int i = 0; i < current.count; i++) {
             E elemento = current.keys.get(i);
+            if (elemento instanceof RegistroEstudiante) {
+                RegistroEstudiante est = (RegistroEstudiante) elemento;
+                if (est.getCodigo() == codigo) {
+                    return est.getNombre();
 
 
 }
