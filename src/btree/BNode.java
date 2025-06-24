@@ -2,8 +2,10 @@ package btree;
 
 import java.util.ArrayList;
 
+// Clase genérica que representa un nodo del árbol B
 public class BNode<E extends Comparable<E>> {
-    protected static int globalId = 0;
+    
+    protected static int globalId = 0;  // esta es una variable estática usada para asignar un ID único a cada nodo
     protected int idNode;
     protected ArrayList<E> keys;
     protected ArrayList<BNode<E>> childs;
