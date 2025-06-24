@@ -352,13 +352,14 @@ public class BTree<E extends Comparable<E>> {
 
     //este es un metodo estático que construye un BTree a partir de un archivo de texto
     public static BTree<Integer> building_BTree(String filename) throws ItemNoFound {
-        BTree<Integer> tree = null;
-        Map<Integer, BNode<Integer>> nodos = new HashMap<>();
+        BTree<Integer> tree = null;// este el arbol que se va a contruuir
+        Map<Integer, BNode<Integer>> nodos = new HashMap<>();//y este el mapa para guardar los nodos con su id
 
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String linea;
+            // aqui se lee la primera línea del archivo que contiene el orden del árbol
             int orden = Integer.parseInt(br.readLine().trim());
-            tree = new BTree<>(orden);
+            tree = new BTree<>(orden); /// y se crea un nuevo BTree con ese orden
 
             while ((linea = br.readLine()) != null) {
                 linea = linea.trim();
