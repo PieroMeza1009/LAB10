@@ -249,13 +249,16 @@ public class BTree<E extends Comparable<E>> {
             delete(node.childs.get(pos[0]), key);
         }
     }
+// Métodos auxiliares usados por delete()
 
+// Retorna el predecesor que seria el máximo valor del subárbol izquierdo
     private E getPredecessor(BNode<E> node) {
         while (node.childs.get(node.count) != null) {
             node = node.childs.get(node.count);
         }
         return node.keys.get(node.count - 1);
     }
+    // Retorna el sucesor (mínimo valor del subárbol derecho)
     private E getSuccessor(BNode<E> node) {
         while (node.childs.get(0) != null) {
             node = node.childs.get(0);
