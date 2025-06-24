@@ -154,8 +154,9 @@ public class BTree<E extends Comparable<E>> {
 
     // ===================== Ejercicio 01 =====================
 
+    // este es un metodo para buscar una clave en el árbol B
     public boolean search(E cl) {
-        if (isEmpty()) {
+        if (isEmpty()) { //si esta vacioooo
             System.out.println("El árbol está vacío.");
             return false;
         }
