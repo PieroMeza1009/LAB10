@@ -228,13 +228,14 @@ public class BTree<E extends Comparable<E>> {
                         E succ = getSuccessor(succNode);
                         node.keys.set(pos[0], succ);
                         delete(succNode, succ);
-                    } else {
+                    } else {  // Si no, fusiona y elimina
                         merge(node, pos[0]);
                         delete(predNode, key);
                     }
                 }
             }
         } else {
+            // Si no se encuentra la clave y estamos en hoja, termina
             if (node.childs.get(pos[0]) == null) {
                 System.out.println("La clave " + key + " no existe.");
                 return;
