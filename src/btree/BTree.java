@@ -1,5 +1,8 @@
 package btree;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class BTree<E extends Comparable<E>> {
     private BNode<E> root;
     private int orden;
@@ -318,6 +321,11 @@ public class BTree<E extends Comparable<E>> {
         child.count += sibling.count + 1;
         node.count--;
     }
+
+    // ========== EJERCICIO 3 ==========
+    public static BTree<Integer> building_BTree(String filename) throws ItemNoFound {
+        BTree<Integer> tree = null;
+        Map<Integer, BNode<Integer>> nodos = new HashMap<>();
 
 
 }
