@@ -183,6 +183,7 @@ public class BTree<E extends Comparable<E>> {
 
     // ===================== EJERCICIO 02: Eliminar clave =====================
 
+    // Método para eliminar una clave del árbol B
     public void remove(E key) {
         if (root == null) {
             System.out.println("El árbol está vacío.");
@@ -190,14 +191,15 @@ public class BTree<E extends Comparable<E>> {
         }
         delete(root, key);
 
-        if (root.count == 0) {
+        if (root.count == 0) { // Si luego de eliminar la raíz queda vacía
             if (root.childs.get(0) != null) {
-                root = root.childs.get(0); // Hijo único se vuelve la nueva raíz
+                root = root.childs.get(0); /// el hijo se convierte en nueva raíz
             } else {
-                root = null;
+                root = null; // y sino el arbol queda vacio|
             }
         }
     }
+    // Método recursivo que elimina una clave en un nodo
     private void delete(BNode<E> node, E key) {
         int[] pos = new int[1];
         boolean found = node.searchNode(key, pos);
