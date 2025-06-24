@@ -381,13 +381,14 @@ public class BTree<E extends Comparable<E>> {
                 for (int i = 2; i < partes.length; i++) {
                     int clave = Integer.parseInt(partes[i].trim());
                     nodo.keys.set(i - 2, clave); // Inserta la clave en la posición correcta
-                    nodo.count++;
+                    nodo.count++; // Incrementa la cantidad de claves
                 }
 
+                // con este if validamos si el nodo tiene más claves de las permitidas
                 if (nodo.count > orden - 1) {
                     throw new ItemNoFound("Nodo con más claves que el orden permitido");
                 }
-
+                 // Guarda el nodo en el mapa con su id
                 nodos.put(idNodo, nodo);
             }
 
