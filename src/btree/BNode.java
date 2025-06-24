@@ -18,13 +18,15 @@ public class BNode<E extends Comparable<E>> {
     public BNode(int n) {
 
         this.keys = new ArrayList<>(n);//inicia la lista de claves con capacidad n
-        
+
         this.childs = new ArrayList<>(n + 1); // n+1 hijos posibles en B-Tree, capacidad
 
-        this.count = 0;
-        this.idNode = globalId++; // ID único por nodo
+        this.count = 0; 
+
+        this.idNode = globalId++; // asigna un ID único por nodo y aumenta el contador 
         // Inicializa con null
-        for (int i = 0; i < n; i++) {
+
+        for (int i = 0; i < n; i++) {  // Agrega 'n' claves nulas como espacio reservado
             this.keys.add(null);
         }
         for (int i = 0; i < n + 1; i++) {
