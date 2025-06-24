@@ -394,7 +394,8 @@ public class BTree<E extends Comparable<E>> {
 
 
             // Reconstrucción para archivo específico
-            tree.root = nodos.get(6);
+            tree.root = nodos.get(6);// Raíz es el nodo con id 6
+            // Asignación de hijos a la raíz
             tree.root.childs.set(0, nodos.get(2));
             tree.root.childs.set(1, nodos.get(5));
 
