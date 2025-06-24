@@ -224,6 +224,7 @@ public class BTree<E extends Comparable<E>> {
                 } else {
                     BNode<E> succNode = node.childs.get(pos[0] + 1);
                     if (succNode.count >= orden / 2) {
+                        // Reemplaza con el sucesor si es más conveniente
                         E succ = getSuccessor(succNode);
                         node.keys.set(pos[0], succ);
                         delete(succNode, succ);
