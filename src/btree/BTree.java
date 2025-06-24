@@ -396,6 +396,11 @@ public class BTree<E extends Comparable<E>> {
                 RegistroEstudiante est = (RegistroEstudiante) elemento;
                 if (est.getCodigo() == codigo) {
                     return est.getNombre();
+                }
+                if (codigo < est.getCodigo()) {
+                    return buscarNombreRecursivo(current.childs.get(i), codigo);
+                }
+            }
 
 
 }
