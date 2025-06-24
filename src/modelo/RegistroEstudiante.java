@@ -1,8 +1,9 @@
 package modelo;
 
+// Esta es la clase que representa a un estudiante con código y nombre
 public class RegistroEstudiante implements Comparable<RegistroEstudiante> {
-    private int codigo;
-    private String nombre;
+    private int codigo;     // Código universitario del estudiante
+    private String nombre;  // Nombre del estudiante
 
     public RegistroEstudiante(int codigo, String nombre) {
         this.codigo = codigo;
