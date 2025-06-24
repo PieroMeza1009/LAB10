@@ -242,7 +242,7 @@ public class BTree<E extends Comparable<E>> {
             }
 
             BNode<E> child = node.childs.get(pos[0]);
-            if (child.count < orden / 2) {
+            if (child.count < orden / 2) { // Si el hijo tiene menos del mínimo de claves, lo completamos
                 fill(node, pos[0]);
             }
 
