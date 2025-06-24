@@ -390,5 +390,8 @@ public class BTree<E extends Comparable<E>> {
     private String buscarNombreRecursivo(BNode<E> current, int codigo) {
         if (current == null) return "No encontrado";
 
+        for (int i = 0; i < current.count; i++) {
+            E elemento = current.keys.get(i);
+
 
 }
