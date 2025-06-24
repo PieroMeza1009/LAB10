@@ -28,4 +28,10 @@ public class Main {
         arbol.remove(33);
         arbol.remove(10);
 
+        System.out.println("\n=== ÁRBOL TRAS ELIMINACIONES ===");
+        System.out.println(arbol);
+
+        System.out.println("\n=== CARGA DESDE ARCHIVO arbolB.txt ===");
+        try {
+
 }
