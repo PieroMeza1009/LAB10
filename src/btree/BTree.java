@@ -361,10 +361,14 @@ public class BTree<E extends Comparable<E>> {
             int orden = Integer.parseInt(br.readLine().trim());
             tree = new BTree<>(orden); /// y se crea un nuevo BTree con ese orden
 
+            //con este while se lee el resto de líneas, cada una representa un nodo del árbol
             while ((linea = br.readLine()) != null) {
-                linea = linea.trim();
-                if (linea.isEmpty()) continue;
-                String[] partes = linea.split(",");
+                linea = linea.trim();//esta linea elimina espacios innecesarios
+                
+                if (linea.isEmpty()) continue;// Ignora líneas vacías
+
+                String[] partes = linea.split(",");//// Se separa la línea por comas
+                
                 int nivel = Integer.parseInt(partes[0].trim());
                 int idNodo = Integer.parseInt(partes[1].trim());
 
