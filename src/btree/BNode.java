@@ -14,6 +14,7 @@ public class BNode<E extends Comparable<E>> {
     protected ArrayList<BNode<E>> childs;//esta es una lista de referencia a los hijos
     protected int count;
 
+    // Constructor del nodo, recibe el orden del árbol (n)
     public BNode(int n) {
         this.keys = new ArrayList<>(n);
         this.childs = new ArrayList<>(n + 1); // n+1 hijos posibles en B-Tree
