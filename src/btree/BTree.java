@@ -205,10 +205,11 @@ public class BTree<E extends Comparable<E>> {
         boolean found = node.searchNode(key, pos);
 
         if (found) {
+              // Caso 1: Clave está en una hoja
             if (node.childs.get(pos[0]) == null) {
                 // Caso 1: clave en hoja
                 for (int i = pos[0]; i < node.count - 1; i++) {
-                    node.keys.set(i, node.keys.get(i + 1));
+                    node.keys.set(i, node.keys.get(i + 1));     // Elimina la clave y reorganiza
                 }
                 node.keys.set(node.count - 1, null);
                 node.count--;
@@ -216,6 +217,7 @@ public class BTree<E extends Comparable<E>> {
                 // Caso 2: clave en nodo interno
                 BNode<E> predNode = node.childs.get(pos[0]);
                 if (predNode.count >= orden / 2) {
+                    // Reemplaza con el predecesor si tiene suficientes claves
                     E pred = getPredecessor(predNode);
                     node.keys.set(pos[0], pred);
                     delete(predNode, pred);
